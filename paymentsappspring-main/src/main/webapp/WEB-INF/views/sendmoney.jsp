@@ -1,105 +1,100 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Send Money</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to right, #f0f5ff, #e0f7fa);
+            background: linear-gradient(135deg, #dff6ff, #fdfbfb);
             font-family: 'Segoe UI', sans-serif;
         }
 
-        .container {
+        .form-container {
             max-width: 600px;
-            margin-top: 50px;
+            margin: 60px auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #ff4d4d;
         }
 
         .form-heading {
+            font-size: 28px;
+            font-weight: 700;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: red;
-            border: 2px solid red;
-            padding: 10px;
+            color: #ff4d4d;
             margin-bottom: 30px;
-            border-radius: 10px;
-        }
-
-        .form-box {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-            border: 2px solid #0047ab;
         }
 
         label {
-            color: #0047ab;
             font-weight: 600;
-        }
-
-        .form-check-label {
-            font-weight: 500;
-            color: #ff6600;
+            color: #333;
         }
 
         .form-control:focus {
-            border-color: #0066cc;
-            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+        }
+
+        .form-check-label {
+            color: #555;
         }
 
         .btn-send {
-            background-color: white;
-            color: #0047ab;
+            background-color: #ff4d4d;
+            color: white;
             font-weight: bold;
-            border: 2px solid red;
-            border-radius: 25px;
-            padding: 8px 25px;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
         }
 
         .btn-send:hover {
-            background-color: red;
-            color: white;
+            background-color: #e60000;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="form-heading">SEND MONEY</div>
-    <div class="form-box">
+    <div class="form-container">
+        <div class="form-heading">Send Money</div>
         <form action="sendMoney" method="post">
-            <div class="mb-3">
-                <label for="amount">Amount to Send:</label>
-                <input type="number" class="form-control" id="amount" name="amount" required>
+            <div class="form-section">
+                <label for="amount" class="form-label">Amount</label>
+                <input type="number" id="amount" name="amount" class="form-control" placeholder="Enter amount" required>
             </div>
 
-            <div class="mb-3">
-                <label for="/sendmoney">From:</label>
-                <select class="form-control" id="fromAccount" name="fromAccount" required>
+            <div class="form-section">
+                <label for="fromAccount" class="form-label">From Account</label>
+                <select id="fromAccount" name="fromAccount" class="form-select" required>
                     <option value="">Select Account</option>
                     <option value="1234">Bank A - 1234</option>
                     <option value="5678">Bank B - 5678</option>
-                    <!-- Dynamically populate this with user bank accounts -->
+                    <!-- You can dynamically populate this with server-side logic -->
                 </select>
             </div>
 
-            <div class="mb-3">
+            <div class="form-section">
+                <label class="form-label">Transfer To</label>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="transferType" id="toAccount" value="account" checked>
-                    <label class="form-check-label" for="toAccount">
-                        To Account Number
-                    </label>
+                    <label class="form-check-label" for="toAccount">Account Number</label>
                 </div>
                 <input type="text" class="form-control mt-2" name="toAccountNumber" placeholder="Enter Account Number">
 
                 <div class="form-check mt-3">
                     <input class="form-check-input" type="radio" name="transferType" id="toWallet" value="wallet">
-                    <label class="form-check-label" for="toWallet">
-                        To Wallet
-                    </label>
+                    <label class="form-check-label" for="toWallet">Wallet</label>
                 </div>
                 <input type="text" class="form-control mt-2" name="toWallet" placeholder="Enter Wallet ID">
             </div>
