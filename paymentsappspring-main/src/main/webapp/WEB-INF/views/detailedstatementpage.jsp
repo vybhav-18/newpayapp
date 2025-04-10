@@ -8,59 +8,62 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to right, #fef9f4, #e0f7fa);
+            background: linear-gradient(to right, #e8f0ff, #f0f5ff);
             font-family: 'Segoe UI', sans-serif;
         }
 
         .form-heading {
             text-align: center;
-            font-size: 22px;
-            font-weight: bold;
-            color: orange;
-            border: 2px solid red;
-            padding: 10px;
-            border-radius: 10px;
-            margin: 30px auto;
+            font-size: 26px;
+            font-weight: 600;
+            color: #4b0082;
+            background-color: #f2e9ff;
+            border: 1px solid #c8b6ff;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin: 40px auto 30px;
             max-width: 600px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
         }
 
         .form-box {
             background-color: #ffffff;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-            border: 2px solid #0047ab;
-            max-width: 700px;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+            border: 1px solid #cfd8ff;
+            max-width: 720px;
             margin: auto;
         }
 
         label {
-            font-weight: bold;
-            color: orange;
+            font-weight: 500;
+            color: #4b0082;
         }
 
         .form-check-label {
-            color: orange;
+            color: #4b0082;
             font-weight: 500;
         }
 
         .form-check-input:checked {
-            background-color: #0047ab;
-            border-color: #0047ab;
+            background-color: #6a5acd;
+            border-color: #6a5acd;
         }
 
         .btn-generate {
-            background-color: white;
-            color: red;
-            font-weight: bold;
-            border: 2px solid red;
+            background-color: #6a5acd;
+            color: white;
+            font-weight: 600;
+            border: none;
             border-radius: 25px;
-            padding: 8px 25px;
+            padding: 10px 30px;
+            box-shadow: 0 4px 10px rgba(106, 90, 205, 0.3);
+            transition: all 0.3s ease;
         }
 
         .btn-generate:hover {
-            background-color: red;
-            color: white;
+            background-color: #5a4bb7;
         }
 
         @media (max-width: 576px) {
@@ -77,17 +80,17 @@
 </head>
 <body>
 
-<div class="form-heading">Statement Request Page</div>
+<div class="form-heading">📄 Statement Request Page</div>
 
 <div class="form-box">
     <form action="/detailedstatementpage" method="post">
-        <div class="row mb-3">
-            <div class="col-md-6 col-sm-12 mb-2">
-                <label for="startDate">Start DATE:</label>
+        <div class="row mb-4">
+            <div class="col-md-6 col-sm-12 mb-3">
+                <label for="startDate">Start Date:</label>
                 <input type="date" class="form-control" id="startDate" name="startDate" required>
             </div>
             <div class="col-md-6 col-sm-12">
-                <label for="endDate">End DATE:</label>
+                <label for="endDate">End Date:</label>
                 <input type="date" class="form-control" id="endDate" name="endDate" required>
             </div>
         </div>
